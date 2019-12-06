@@ -17,14 +17,14 @@
                 <img src="@/assets/image/kefu2.png" alt="">
                 <span>客服中心</span>
             </li>
-            <li>
+            <router-link to="/key" tag="li">
                 <img src="@/assets/image/key2.png" alt="">
                 <span>钥匙管理</span>
-            </li>
-            <li>
+            </router-link>
+            <router-link to="/notice" tag="li">
                 <img src="@/assets/image/notice2.png" alt="">
                 <span>公告管理</span>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
@@ -38,16 +38,18 @@
 <style scoped>
     #index{
         font-size: .28rem;
-        margin-top: 1.2rem;
+        margin-top: .7rem;
     }
     ul{
-        margin: 6%;
+        width: 100%;
+        padding: .8rem;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
     ul li{
         width: 40%;
-        margin: 10% 4%;
+        margin: 10% 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
