@@ -15,7 +15,7 @@ const routes = [
     {
         path:'/notice',
         name:'notice',
-        component:() => import('../page/notice'),
+        component:() => import('../page/notice/notice'),
         meta: {
             title: '公告管理'
         }
@@ -23,7 +23,7 @@ const routes = [
     {
         path:'/key',
         name:'key',
-        component:() => import('../page/key'),
+        component:() => import('../page/keys/key'),
         meta: {
             title: '钥匙管理'
         }
