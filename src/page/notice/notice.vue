@@ -28,7 +28,9 @@
             </li>
         </ul>
         <div class="edit">
-            <img src="@/assets/image/edit.png" alt="">
+            <router-link to="/addNotice">
+                <img src="@/assets/image/edit.png" alt="">
+            </router-link>
         </div>
     </div>
 </template>

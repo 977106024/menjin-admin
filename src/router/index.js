@@ -19,6 +19,13 @@ const routes = [
         meta: {
             title: '公告管理'
         }
+    },{
+        path:'/addNotice',
+        name:'addNotice',
+        component:() => import('../page/notice/addNotice'),
+        meta: {
+            title: '添加公告'
+        }
     },
     {
         path:'/key',
@@ -26,6 +33,31 @@ const routes = [
         component:() => import('../page/keys/key'),
         meta: {
             title: '钥匙管理'
+        }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+        path:'/login',
+        name:'login',
+        component:() => import('../page/login/login'),
+        meta: {
+            title: '登陆'
         }
     }
 ]

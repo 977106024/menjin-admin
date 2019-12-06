@@ -20,6 +20,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+body{
+    background: #fdfdfd;
+}
   ul,li{
     list-style: none;
   }
