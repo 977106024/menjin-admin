@@ -19,6 +19,10 @@
                 </div>
             </li>
         </ul>
+        <!-- 未审核弹窗 -->
+        <div class="popup">
+
+        </div>
     </div>
 </template>
 <script>
@@ -134,5 +138,15 @@ export default {
     }
     .status2{
         background: #17CF66;
+    }
+    /* 弹窗样式 */
+    .popup{
+        width: 87%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border-radius: 0.16rem;
+        background: #fff;
+        transform: translate(-50%, -50%);
     }
 </style>
