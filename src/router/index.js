@@ -27,6 +27,31 @@ const routes = [
         meta: {
             title: '钥匙管理'
         }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+        path:'/login',
+        name:'login',
+        component:() => import('../page/login/login'),
+        meta: {
+            title: '登陆'
+        }
     }
 ]
 
