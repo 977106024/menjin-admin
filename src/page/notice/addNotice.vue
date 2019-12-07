@@ -9,11 +9,15 @@
         <section class="select">
             <div class="region">
                 <span>区域</span>
-                <span @click="showPicker = true"> > </span>
+                <img src="@/assets/image/key_right.png" @click="showPicker = true" alt="">
+<!--                <span > > </span>-->
             </div>
             <div class="status">
                 <span>状态</span>
-                <span>显示中</span>
+                <div class="btn">
+                    <span class="text">显示中</span>
+                    <van-switch v-model="checked" active-color="#108EE9" inactive-color="#fff" size="24px" />
+                </div>
             </div>
         </section>
         <van-popup v-model="showPicker" position="bottom">
@@ -31,12 +35,14 @@
     export default {
         name: "addNotice",
         data:()=>({
+            checked:false,
             showPicker:false,
             columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
         }),
         methods: {
             onConfirm() {
                 // Toast(`当前值：${value}, 当前索引：${index}`);
+                this.showPicker = false
             }
         },
     }
@@ -79,5 +85,27 @@
         background: #fff;
         display: flex;
         justify-content: space-between;
+    }
+
+    /*区域 状态*/
+    section.select .region img{
+        height: .35rem;
+        width: .35rem;
+    }
+    section.select .status{
+        padding: .16rem .6rem;
+        display: flex;
+        align-items: center;
+    }
+
+    section.select .status .btn{
+       display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section.select .status .btn > .text{
+        color: #778392;
+        font-size: .28rem;
+        padding-right: .25rem;
     }
 </style>
