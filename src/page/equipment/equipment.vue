@@ -13,7 +13,7 @@
 <!--                编辑删除按钮-->
                 <div class="btn">
                     <img src="@/assets/image/edit2.png" alt="">
-                    <img src="@/assets/image/delete.png" alt="">
+                    <img src="@/assets/image/delete.png" @click="deleteItem" alt="">
                 </div>
             </li>
             <li>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="btn">
                     <img src="@/assets/image/edit2.png" alt="">
-                    <img src="@/assets/image/delete.png" alt="">
+                    <img src="@/assets/image/delete.png" @click="deleteItem" alt="">
                 </div>
             </li>
         </ul>
@@ -34,8 +34,24 @@
 </template>
 
 <script>
+    import { Dialog } from 'vant';
     export default {
-        name: "equipment"
+        name: "equipment",
+        components:{[Dialog.Component.name]: Dialog.Component},
+        methods:{
+            deleteItem(){
+                Dialog.confirm({
+                    message: '确认删除该门禁？',
+                    confirmButtonText:'确定',
+                    width:'230px',
+                    className:'dialog-ahong'
+                }).then(() => {
+                    // on confirm
+                }).catch(() => {
+                    // on cancel
+                });
+            }
+        }
     }
 </script>
 
@@ -82,4 +98,5 @@
         width: .32rem;
         height: .32rem;
     }
+
 </style>
