@@ -34,6 +34,13 @@ const routes = [
         meta: {
             title: '钥匙管理'
         }
+    },{
+        path:'/equipment',
+        name:'equipment',
+        component:() => import('../page/equipment/equipment'),
+        meta: {
+            title: '设备管理'
+        }
     },
 
 

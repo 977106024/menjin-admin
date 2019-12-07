@@ -1,10 +1,10 @@
 <template>
     <div id="index">
         <ul>
-            <li>
+            <router-link to="/equipment" tag="li">
                 <img src="@/assets/image/equipment2.png" alt="">
                 <span>设备管理</span>
-            </li>
+            </router-link>
             <li>
                 <img src="@/assets/image/user2.png" alt="">
                 <span>用户管理</span>
