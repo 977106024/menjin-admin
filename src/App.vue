@@ -26,6 +26,9 @@ body{
   ul,li{
     list-style: none;
   }
+  input,textarea,button{
+    outline: none;
+  }
   *{
     padding: 0;
     margin: 0;

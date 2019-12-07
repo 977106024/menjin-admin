@@ -44,7 +44,12 @@
                     </label>
                     <label> 
                         <h4>审核描述：</h4>
-                        <textarea  cols="30" rows="10">请输入不少于10个字的描述</textarea>
+                        <div class="describe">
+                            <textarea v-model="desc" cols="30" rows="8" placeholder="请输入不少于10个字的描述" @input="controlNumber" ref="count">
+                            </textarea>
+                            <span>{{number}}/240</span>
+                        </div>
+                        
                     </label>
                 </div>
                 <!-- 提交 -->
@@ -52,7 +57,7 @@
                     提交
                 </button>
                 <!-- 弹窗关闭按钮 -->
-                <img class="close" src="@/assets/image/key_close.png" alt="" @click="closePopup()">
+                <img class="close" src="@/assets/image/key_close.png" alt="" @click="closePopup">
             </div>
             <div class="cover">
             </div>
@@ -63,8 +68,13 @@
 <script>
 export default {
     name:'keyManagement',
-    data(){
-        return{
+    data: () => ({
+            // 弹窗显示
+            noExamine:false, 
+            //字数
+            number:0,   
+            // 描述内容
+            desc:'', 
             // 审核信息列表
             manageList:[
                 {
@@ -92,10 +102,9 @@ export default {
                     date:'2019-01-15',
                 },
             ],
-            // 弹窗显示
-            noExamine:false,        
-            }
-    },
+               
+            
+    }),
     methods:{
         // 点击列表
         showPopup(status){
@@ -105,8 +114,17 @@ export default {
                 this.noExamine = false
             }
         },
+        // 关闭弹窗
         closePopup(){
             this.noExamine = false
+        },
+        // 控制数量
+        controlNumber(){
+            this.number = this.desc.length
+            if(this.desc.length >= 240){
+                this.$refs.count.setAttribute("maxlength",240);
+                this.number = 240
+            }
         }
     }
 }
@@ -170,7 +188,7 @@ export default {
         font-size: 0.24rem;
         color: #9B9B9B;
     }
-    span{
+    examine .examine span{
         display: inline-block;
         width: 0.12rem;
         height: 0.12rem;
@@ -237,8 +255,10 @@ export default {
         font-weight: normal;
     }
     .diaolog .content label input{
+        flex: 1;
         border:0;
         border-bottom: 1px solid #EEEEEE;
+        margin-left: 0.3rem;
     }
     /* 详细信息 */
     .diaolog .content label .detail{
@@ -266,12 +286,31 @@ export default {
         flex-direction: column;
         margin-bottom: 0;
     }
-    .diaolog .content label textarea{
+    .diaolog .content label .describe{
+        width: 100%;
         margin-top: 0.48rem;
+        position: relative;
+    }
+    .diaolog .content label textarea{
+        width: 100%;
         border: 0;
         border-top: 1px solid #dddddd;
         border-bottom: 1px solid #dddddd;
         padding: 0.32rem;
+        font-size: 0.28rem;
+        color:#3B4859;
+    }
+    .diaolog .content label textarea::placeholder {
+        color: #CCCCCC;
+        font-size: 0.26rem;
+    }
+    .diaolog .content label .describe span{
+        position: absolute;
+        font-size: 0.26rem;
+        right: 0.16rem;
+        bottom: 0.28rem;
+        color: #CCCCCC;
+        font-size: 0.26rem;
     }
     /* 提交按钮 */
     .popup .commit{
