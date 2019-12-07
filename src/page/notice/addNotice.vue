@@ -9,19 +9,36 @@
         <section class="select">
             <div class="region">
                 <span>区域</span>
-                <span> > </span>
+                <span @click="showPicker = true"> > </span>
             </div>
             <div class="status">
                 <span>状态</span>
                 <span>显示中</span>
             </div>
         </section>
+        <van-popup v-model="showPicker" position="bottom">
+            <van-picker
+                    show-toolbar
+                    :columns="columns"
+                    @cancel="showPicker = false"
+                    @confirm="onConfirm"
+            />
+        </van-popup>
     </div>
 </template>
 
 <script>
     export default {
-        name: "addNotice"
+        name: "addNotice",
+        data:()=>({
+            showPicker:false,
+            columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
+        }),
+        methods: {
+            onConfirm() {
+                // Toast(`当前值：${value}, 当前索引：${index}`);
+            }
+        },
     }
 </script>
 
