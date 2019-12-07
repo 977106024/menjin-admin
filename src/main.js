@@ -5,6 +5,7 @@ import router from './router'
 
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import '@/assets/css/style.css'
 
 Vue.use(Vant);
 

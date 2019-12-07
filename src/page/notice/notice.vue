@@ -2,6 +2,7 @@
     <div class="notice">
         <ul>
             <li v-for="(item,index) of listData" :key="index">
+<!--                标题-->
                 <header>
                     <div>{{item.title}}</div>
                     <div class="more-btn" @click="showMoreBtn(item.id)">
@@ -18,6 +19,7 @@
                         </div>
                     </div>
                 </header>
+<!--                内容-->
                 <section class="content">
                     <p>{{item.content}}</p>
                 </section>
@@ -27,7 +29,9 @@
                 </footer>
             </li>
         </ul>
-        <div class="edit">
+
+<!--        新增-->
+        <div class="add">
             <router-link to="/addNotice">
                 <img src="@/assets/image/edit.png" alt="">
             </router-link>
@@ -88,6 +92,7 @@
             visibleBtn:undefined
         }),
         methods:{
+            // 按钮显示隐藏
             showMoreBtn(id){
                 this.visibleBtn =  this.visibleBtn === id ? undefined : id
             }
@@ -99,6 +104,8 @@
     .notice{
         font-size: .28rem;
     }
+
+    /*标题 内容*/
     .content{
         color: #778392;
         padding: .7rem;
@@ -123,6 +130,8 @@
         font-size: .26rem;
         padding-top: 0;
     }
+
+    /*三个点按钮*/
     .more-btn{
         position: relative;
     }
@@ -155,12 +164,14 @@
     .btns .btn>span{
         white-space: nowrap;
     }
-    .edit{
+
+    /*新增*/
+    .add{
         position: fixed;
         right: .5rem;
         bottom: .5rem;
     }
-    .edit img{
+    .add img{
         width: 1.5rem;
         height: 1.5rem;
     }

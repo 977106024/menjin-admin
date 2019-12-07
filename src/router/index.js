@@ -34,6 +34,20 @@ const routes = [
         meta: {
             title: '钥匙管理'
         }
+    },{
+        path:'/equipment',
+        name:'equipment',
+        component:() => import('../page/equipment/equipment'),
+        meta: {
+            title: '设备管理'
+        }
+    },{
+        path:'/addEquipment',
+        name:'addEquipment',
+        component:() => import('../page/equipment/add'),
+        meta: {
+            title: '添加设备'
+        }
     },
     {
         path:'/openingRecord',
