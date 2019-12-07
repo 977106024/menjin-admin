@@ -134,6 +134,7 @@ export default {
         width: 100%;
         text-align: left;
     }
+    /* 审核列表 */
     .keyManagement ul{
         width: 100%;
         padding: 0.6rem .6rem;
@@ -159,6 +160,7 @@ export default {
         display: flex;
         flex-direction: row;
     }
+    /* 头像 */
     .keyManagement ul li .avator{
         width:0.68rem;
         height:0.68rem;
@@ -188,7 +190,7 @@ export default {
         font-size: 0.24rem;
         color: #9B9B9B;
     }
-    examine .examine span{
+    .examine span{
         display: inline-block;
         width: 0.12rem;
         height: 0.12rem;
@@ -196,16 +198,16 @@ export default {
         border-radius: 50%;
         margin-right: 0.16rem;
     }
-    .statusOne{
+    .examine .statusOne{
         color: #E86C6C;
     }
-    .statusTwo{
+    .examine .statusTwo{
         color: #17CF66;
     }
-     .status1{
+    .examine .status1{
         background: #E86C6C;
     }
-    .status2{
+    .examine .status2{
         background: #17CF66;
     }
     /* 弹窗样式 */

@@ -35,6 +35,14 @@ const routes = [
             title: '钥匙管理'
         }
     },
+    {
+        path:'/openingRecord',
+        name:'openingRecord',
+        component:() => import('../page/openingRecord'),
+        meta: {
+            title: '开门记录'
+        }
+    },
 
 
 
