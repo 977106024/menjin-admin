@@ -28,6 +28,8 @@ body{
   }
   input,textarea,button{
     outline: none;
+    border:0;
+    background:none;
   }
   *{
     padding: 0;

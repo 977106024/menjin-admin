@@ -65,6 +65,15 @@ const routes = [
             title: '用户管理'
         }
     },
+    {
+        path:'/addUser',
+        name:'addUser',
+        component:() => import('../page/userManagement/addUser'),
+        meta: {
+            title: '添加用户'
+        }
+    },
+
 
 
 
