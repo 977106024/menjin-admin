@@ -2,15 +2,18 @@
     <div class="add-notice">
 <!--        标题 输入框-->
         <section class="input">
-            <header>标题</header>
-            <textarea name="" id="" cols="30" rows="10" placeholder="请输入公告内容" maxlength="240"></textarea>
+            <header>
+                <span>标题</span>
+                <input type="text" maxlength="12">
+            </header>
+            <textarea v-model="desc" name="" id="" cols="30" rows="10" placeholder="请输入公告内容" maxlength="240" @input="controlNumber"></textarea>
+            <span class="inputNumber">{{inputNumber}}/240</span>
         </section>
 <!--        区域 状态-->
         <section class="select">
             <div class="region">
                 <span>区域</span>
                 <img src="@/assets/image/key_right.png" @click="showPicker = true" alt="">
-<!--                <span > > </span>-->
             </div>
             <div class="status">
                 <span>状态</span>
@@ -35,14 +38,26 @@
     export default {
         name: "addNotice",
         data:()=>({
+            // 是否显示按钮
             checked:false,
+            // 是否显示区域
             showPicker:false,
+            //输入内容
+            desc:'',
+            //输入字数
+            inputNumber:0,
+            //区域数据
             columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
         }),
         methods: {
+            //区域选择结果
             onConfirm() {
                 // Toast(`当前值：${value}, 当前索引：${index}`);
                 this.showPicker = false
+            },
+            // 控制数量
+            controlNumber(){
+                this.inputNumber = this.desc.length
             }
         },
     }
@@ -55,6 +70,7 @@
 
     /*标题*/
     .add-notice header{
+        color: #3B4859;
         text-align: left;
         padding: .24rem;
         padding-left: .6rem;
@@ -62,12 +78,25 @@
         border-top: 1px solid #ddd;
         border-bottom: 1px solid #ddd;
     }
+    .add-notice header>span{
+        color: #778392;
+    }
+    .add-notice header input{
+        width: 80%;
+        color: #3B4859;
+        font-size: .32rem;
+        /*font-weight: bold;*/
+        outline: none;
+        border: 0;
+        margin-left: .2rem;
+    }
     .add-notice section.input{
         border-bottom: 1px solid #ddd;
     }
 
     /*公告内容*/
     .add-notice textarea{
+        color:#778392;
         width: 100%;
         border: 0;
         padding: .52rem .6rem;
@@ -75,6 +104,18 @@
     textarea::-webkit-input-placeholder {
         color: #778392;
         font-size: .28rem;
+    }
+    .input{
+        position: relative;
+    }
+    .input span.inputNumber{
+        position: absolute;
+        font-size: 0.26rem;
+        right: 0.6rem;
+        bottom: 0.6rem;
+        color: #CCCCCC;
+        font-size: 0.26rem;
+        z-index: 11;
     }
 
     section.select>div{
@@ -89,8 +130,8 @@
 
     /*区域 状态*/
     section.select .region img{
-        height: .35rem;
-        width: .35rem;
+        height: .4rem;
+        width: .4rem;
     }
     section.select .status{
         padding: .16rem .6rem;
@@ -108,4 +149,5 @@
         font-size: .28rem;
         padding-right: .25rem;
     }
+
 </style>
