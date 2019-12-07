@@ -9,10 +9,10 @@
                 <img src="@/assets/image/user2.png" alt="">
                 <span>用户管理</span>
             </li>
-            <li>
+            <router-link to="/openingRecord" tag="li">
                 <img src="@/assets/image/open-door2.png" alt="">
                 <span>开门记录</span>
-            </li>
+            </router-link>
             <li>
                 <img src="@/assets/image/kefu2.png" alt="">
                 <span>客服中心</span>
