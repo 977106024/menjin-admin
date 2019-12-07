@@ -2,6 +2,7 @@
     <div class="kefu-hall">
         <ul>
             <li v-for="(item,index) of listData" :key="index">
+
                 <!--                标题-->
                 <header>
                     <div class="title">
@@ -12,23 +13,19 @@
                         <span class="status">{{item.status}}</span>
                     </div>
                 </header>
+
                 <!--                内容-->
                 <section class="content">
                     <p>{{item.content}}</p>
                 </section>
+
+<!--                底部-->
                 <footer>
                     <div>{{item.time}}</div>
                     <div class="handle">{{item.address}}</div>
                 </footer>
             </li>
         </ul>
-
-        <!--        新增-->
-        <div class="add">
-            <router-link to="/addkefu-hall">
-                <img src="@/assets/image/edit.png" alt="">
-            </router-link>
-        </div>
     </div>
 </template>
 
@@ -47,7 +44,6 @@
                 },
 
             ],
-            visibleBtn:undefined
         })
     }
 </script>
@@ -58,7 +54,7 @@
         padding-top: .5rem;
     }
 
-    /*标题 内容*/
+    /*内容*/
     .content{
         color: #778392;
         font-size: .28rem;
@@ -69,11 +65,15 @@
         margin-bottom: .5rem;
         box-shadow:0px 0px 24px 0px rgba(39,52,125,0.06);
     }
+
+    /*header*/
     ul li header{
         color: #3B4859;
         font-size: .32rem;
         border-bottom: 1px solid #eee;
     }
+
+    /*标题*/
     ul li header .title{
         display: flex;
         align-items: center;
@@ -86,6 +86,8 @@
         background: #E86C6C;
         margin-right: .2rem;
     }
+
+    /*头部&底部*/
     ul li header,ul li footer{
         display: flex;
         justify-content: space-between;
@@ -109,19 +111,10 @@
         color: #E86C6C;
         font-size: .28rem;
     }
-    
+
+    /*去处理*/
     footer .handle{
         color: #3A75FE;
     }
 
-    /*新增*/
-    .add{
-        position: fixed;
-        right: .5rem;
-        bottom: .5rem;
-    }
-    .add img{
-        width: 1.5rem;
-        height: 1.5rem;
-    }
 </style>
