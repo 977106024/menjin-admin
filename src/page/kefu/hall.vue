@@ -22,7 +22,9 @@
 <!--                底部-->
                 <footer>
                     <div>{{item.time}}</div>
-                    <div class="handle">{{item.address}}</div>
+                    <router-link to="/kefuReply">
+                        <div class="handle">{{item.address}}</div>
+                    </router-link>
                 </footer>
             </li>
         </ul>
@@ -75,6 +77,7 @@
 
     /*标题*/
     ul li header .title{
+        font-weight: bold;
         display: flex;
         align-items: center;
     }
@@ -95,9 +98,16 @@
     }
     ul li footer{
         color: #8392A7;
-        font-size: .26rem;
+        font-size: .24rem;
         padding-top: 0;
     }
+
+    /*去处理*/
+    footer .handle{
+        color: #3A75FE;
+        font-size: .26rem;
+    }
+
 
     /*待处理*/
     .more-btn{
@@ -111,10 +121,4 @@
         color: #E86C6C;
         font-size: .28rem;
     }
-
-    /*去处理*/
-    footer .handle{
-        color: #3A75FE;
-    }
-
 </style>

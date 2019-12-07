@@ -71,6 +71,13 @@ const routes = [
         meta: {
             title: '客服中心'
         }
+    },{
+        path:'/kefuReply',
+        name:'kefuReply',
+        component:() => import('../page/kefu/reply'),
+        meta: {
+            title: '客服中心'
+        }
     },
 
 
