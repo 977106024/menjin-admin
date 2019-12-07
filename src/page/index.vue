@@ -13,10 +13,10 @@
                 <img src="@/assets/image/open-door2.png" alt="">
                 <span>开门记录</span>
             </router-link>
-            <li>
+            <router-link to="/kefuHall" tag="li">
                 <img src="@/assets/image/kefu2.png" alt="">
                 <span>客服中心</span>
-            </li>
+            </router-link>
             <router-link to="/key" tag="li">
                 <img src="@/assets/image/key2.png" alt="">
                 <span>钥匙管理</span>

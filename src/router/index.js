@@ -64,6 +64,20 @@ const routes = [
         meta: {
             title: '用户管理'
         }
+    },{
+        path:'/kefuHall',
+        name:'kefuHall',
+        component:() => import('../page/kefu/hall'),
+        meta: {
+            title: '客服中心'
+        }
+    },{
+        path:'/kefuReply',
+        name:'kefuReply',
+        component:() => import('../page/kefu/reply'),
+        meta: {
+            title: '客服中心'
+        }
     },
     {
         path:'/addUser',
