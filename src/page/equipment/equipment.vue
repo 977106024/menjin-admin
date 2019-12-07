@@ -30,6 +30,13 @@
                 </div>
             </li>
         </ul>
+
+<!--        新增-->
+        <div class="add">
+            <router-link to="/addEquipment">
+                <img src="@/assets/image/edit.png" alt="">
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -39,6 +46,7 @@
         name: "equipment",
         components:{[Dialog.Component.name]: Dialog.Component},
         methods:{
+            //删除
             deleteItem(){
                 Dialog.confirm({
                     message: '确认删除该门禁？',
@@ -97,6 +105,17 @@
     li .btn > img{
         width: .32rem;
         height: .32rem;
+    }
+
+    /*新增*/
+    .add{
+        position: fixed;
+        right: .5rem;
+        bottom: .5rem;
+    }
+    .add img{
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
 </style>

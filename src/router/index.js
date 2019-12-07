@@ -41,6 +41,13 @@ const routes = [
         meta: {
             title: '设备管理'
         }
+    },{
+        path:'/addEquipment',
+        name:'addEquipment',
+        component:() => import('../page/equipment/add'),
+        meta: {
+            title: '添加设备'
+        }
     },
     {
         path:'/openingRecord',
