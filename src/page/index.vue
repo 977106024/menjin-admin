@@ -5,10 +5,10 @@
                 <img src="@/assets/image/equipment2.png" alt="">
                 <span>设备管理</span>
             </li>
-            <li>
+            <router-link to="/userManagement" tag="li">
                 <img src="@/assets/image/user2.png" alt="">
                 <span>用户管理</span>
-            </li>
+            </router-link>
             <router-link to="/openingRecord" tag="li">
                 <img src="@/assets/image/open-door2.png" alt="">
                 <span>开门记录</span>

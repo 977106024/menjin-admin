@@ -43,6 +43,14 @@ const routes = [
             title: '开门记录'
         }
     },
+    {
+        path:'/userManagement',
+        name:'userManagement',
+        component:() => import('../page/userManagement/userManagement'),
+        meta: {
+            title: '用户管理'
+        }
+    },
 
 
 
