@@ -4,7 +4,7 @@
         <ul class="addMessage">
             <li>
                 <p>区域</p>
-                <div class="choose">
+                <div class="choose" @click="showPicker = true">
                     <span>选择</span>
                     <img src="@/assets/image/key_right.png" alt="">
                 </div>
@@ -44,6 +44,14 @@
         <div  class="empowerButton">
             <button>授权</button>
         </div>
+        <van-popup v-model="showPicker" position="bottom">
+            <van-picker
+                    show-toolbar
+                    :columns="columns"
+                    @cancel="showPicker = false"
+                    @confirm="onConfirm"
+            />
+        </van-popup>
     </div>
 </template>
 <script>
@@ -53,11 +61,20 @@ export default {
         //  设备
          equipments:['设备1','设备2','设备3'],
          now:0,
+        //  区域选择
+         showPicker:false,
+         columns: ['区域一', '区域二', '区域三', '区域四', '区域五'],
      }),
      methods:{
+        //  切换设备
          changeE(index){
              this.now = index
-         }
+         },
+        //区域选择结果
+        onConfirm() {
+            // Toast(`当前值：${value}, 当前索引：${index}`);
+            this.showPicker = false
+        },
      },
 }
 </script>
