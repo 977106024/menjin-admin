@@ -27,7 +27,7 @@
                     >
                         <van-checkbox
                                 :name="0"
-                                ref="checkboxes"
+                                ref="checkboxAll"
                                 slot="right-icon"
                         />
                     </van-cell>
@@ -62,19 +62,10 @@
             data:['设备1','设备2','设备3'],
             result:[],
             list:3,
-            checked:false
         }),
         methods: {
-            // 选择
-            toggle(index) {
-                this.$refs.checkboxes[index].toggle();
-            },
-            //全选
-            toggleAll() {
-                this.result =
-                    this.result.length >= 4 ? [] : [0, 1, 2, 3]
-            }
-        }
+            
+        },
     }
 </script>
 
