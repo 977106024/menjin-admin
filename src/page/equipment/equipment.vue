@@ -38,7 +38,7 @@
             </router-link>
         </div>
 
-        <img v-if="showClose" src="@/assets/image/close.png" alt="" id="close">
+        <img v-if="showClose" src="@/assets/image/close.png" alt="" id="close" @click="onClose">
     </div>
 </template>
 
@@ -58,7 +58,8 @@
                     message: '确认删除该门禁？',
                     confirmButtonText:'确定',
                     width:'230px',
-                    className:'dialog-ahong'
+                    className:'dialog-ahong',
+                    closeOnPopstate:true
                 }).then(() => {
                     // on confirm
                     this.showClose  = false
@@ -66,8 +67,12 @@
                     // on cancel
                     this.showClose  = false
                 });
+            },
+            // 关闭弹框 x
+            onClose(){
+                Dialog.close({})
             }
-        }
+        },
     }
 </script>
 
