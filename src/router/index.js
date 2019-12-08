@@ -87,6 +87,14 @@ const routes = [
             title: '添加用户'
         }
     },
+    {
+        path:'/userDetail',
+        name:'userDetail',
+        component:() => import('../page/userManagement/userDetail'),
+        meta: {
+            title: '用户管理'
+        }
+    },
 
 
 

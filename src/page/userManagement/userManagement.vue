@@ -10,7 +10,7 @@
         </div>
         <!-- 用户列表 -->
         <ul class="userList">
-            <li v-for="item in userList"  :key=item.id>
+            <li v-for="item in userList"  :key=item.id @click="goUserDetail">
                 <p>
                    <img class="avator" :src="item.avator" />
                    <span>{{item.name}}</span>
@@ -62,6 +62,11 @@ export default {
         ],
             
     }),
+    methods:{
+        goUserDetail(){
+            this.$router.push('/userDetail')
+        }
+    }
 }
 </script>
 <style lang="css" scoped>   

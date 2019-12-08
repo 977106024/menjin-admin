@@ -2,3 +2,7 @@
 .dialog-ahong{
     border-radius: 2px;
 }
+
+.van-cell:not(:last-child)::after{
+    right: 16px;
+}
