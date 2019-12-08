@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="btn">
-                    <img src="@/assets/image/edit2.png" alt="">
+                    <img src="@/assets/image/edit2.png" alt="" @click="edit">
                     <img src="@/assets/image/delete.png" @click="deleteItem" alt="">
                 </div>
             </li>
@@ -71,6 +71,10 @@
             // 关闭弹框 x
             onClose(){
                 Dialog.close({})
+            },
+            //编辑
+            edit(){
+                this.$router.push('/addEquipment')
             }
         },
     }
