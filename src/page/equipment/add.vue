@@ -125,4 +125,5 @@
         padding: .19rem 0;
         background: #1082FF;
     }
+
 </style>

@@ -37,6 +37,8 @@
                 <img src="@/assets/image/edit.png" alt="">
             </router-link>
         </div>
+
+        <img v-if="showClose" src="@/assets/image/close.png" alt="" id="close">
     </div>
 </template>
 
@@ -44,10 +46,14 @@
     import { Dialog } from 'vant';
     export default {
         name: "equipment",
+        data:()=>({
+            showClose:false
+        }),
         components:{[Dialog.Component.name]: Dialog.Component},
         methods:{
             //删除
             deleteItem(){
+                this.showClose  = true
                 Dialog.confirm({
                     message: '确认删除该门禁？',
                     confirmButtonText:'确定',
@@ -55,8 +61,10 @@
                     className:'dialog-ahong'
                 }).then(() => {
                     // on confirm
+                    this.showClose  = false
                 }).catch(() => {
                     // on cancel
+                    this.showClose  = false
                 });
             }
         }
@@ -116,6 +124,17 @@
     .add img{
         width: 1.5rem;
         height: 1.5rem;
+    }
+
+    /*x*/
+    #close{
+        width: .3rem;
+        height: .3rem;
+        position: fixed;
+        bottom: 5.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2222;
     }
 
 </style>
