@@ -65,6 +65,7 @@
     }
     ul li{
         margin-bottom: .5rem;
+        background: white;
         box-shadow:0px 0px 24px 0px rgba(39,52,125,0.06);
     }
 

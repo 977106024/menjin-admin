@@ -25,7 +25,7 @@
             </section>
 
 <!--            回复消息-->
-            <section class="card">
+            <section class="card text">
 
                 <!--                标题-->
                 <header>
@@ -36,7 +36,7 @@
 
                 <!--                内容-->
                 <section class="content">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="" id="" cols="30" rows="5" placeholder="请输入回复内容"></textarea>
                 </section>
             </section>
 
@@ -81,6 +81,7 @@
     }
     .card{
         margin-bottom: .5rem;
+        background: white;
         box-shadow:0px 0px 24px 0px rgba(39,52,125,0.06);
     }
 
@@ -120,6 +121,25 @@
         padding-top: 0;
     }
 
+    /*输入框*/
+    section.text .content textarea{
+        width: 100%;
+        border: 0;
+    }
+    textarea::-webkit-input-placeholder {
+        color: #778392;
+        font-size: .28rem;
+    }
 
-
+    /*底部按钮*/
+    footer button{
+        color: #fff;
+        padding:.14rem 1.04rem;
+        margin-top: .5rem;
+        border-radius: .35rem;
+        background: #1082FF;
+    }
+    footer button + button{
+        margin-left: .88rem;
+    }
 </style>
