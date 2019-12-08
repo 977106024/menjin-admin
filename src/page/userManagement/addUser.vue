@@ -35,7 +35,7 @@
         </div>
         <!-- 授权设备 -->
         <div class="empower">
-            <p>授权设备:</p>
+            <p>授权设备：</p>
             <div class="equipment">
                 <button v-for="(item,index) in equipments"  :key=item.id @click="changeE(index)" :class="{ 'activeE': now == index}" >{{item}}</button>
             </div>
