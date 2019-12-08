@@ -50,8 +50,21 @@
 
 <!--        底部-->
         <footer>
-            <button>授权</button>
+            <button @click="isEmpower = true">授权</button>
         </footer>
+        <!-- 是否授权弹窗 -->
+        <div class="diaolog" v-show="isEmpower">
+            <div class="popup">
+                <img class="close" src="@/assets/image/close.png" alt="" @click="close">
+                <img class="empowerImg" src="@/assets/image/userD_popup.png" alt="">
+                <p>是否确定授权</p>
+                <div class="choose">
+                    <button @click="cancle">取消</button>
+                    <button @click="sure">确定</button>
+                </div>
+            </div>
+            <div class="cover"></div>
+        </div>
     </div>
 </template>
 
@@ -62,7 +75,9 @@
             data:['设备1','设备2','设备3'],
             result:[],
             list:3,
-            checked:false
+            checked:false,
+            // 显示授权弹窗
+            isEmpower:false,
         }),
         methods: {
             // 选择
@@ -73,6 +88,18 @@
             toggleAll() {
                 this.result =
                     this.result.length >= 4 ? [] : [0, 1, 2, 3]
+            },
+            // 取消
+            cancle(){
+                this.isEmpower = false
+            },
+            // 确定
+            sure(){
+                this.isEmpower = false
+            },
+            // 关闭弹窗
+            close(){
+                this.isEmpower = false
             }
         }
     }
@@ -80,7 +107,7 @@
 
 <style scoped>
     .user-detail{
-
+        width: 100%;
     }
 
     /*头部*/
@@ -143,5 +170,64 @@
         border-radius: .8rem;
         padding: .28rem 0;
         background: #1082FF;
+    }
+    /* 是否授权 */
+    .diaolog .popup{
+        width: 78%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        background: #fff;
+        transform: translate(-50%, -50%);
+        border-radius: 0.1rem;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+    .diaolog .cover{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000;
+        z-index: 9;
+        opacity: 0.65;
+    }
+    .popup .empowerImg{
+        width: 2rem;
+        height: 2rem;
+        margin-top: .8rem;
+    }
+    .popup p{
+        width: 100%;
+        font-size: .36rem;
+        color: #3B4859;
+        margin-top: .5rem;
+    }
+    .popup .choose{
+        width: 100%;
+        border-top: 1px solid #E5E5E5;
+        margin-top: .76rem;
+    }
+    .popup .choose button{
+        width: 50%;
+        height: 1rem;
+        line-height: 1rem;
+        font-size: .36rem;
+        color:#6D7278;
+    }
+    .popup .choose button:last-child{
+        color: #108EE9;
+    }
+    .popup .close{
+        position: absolute;
+        width: .3rem;
+        height: .3rem;
+        top: -.6rem;
+        right: 0;
+        z-index: 999;
     }
 </style>
