@@ -2,7 +2,7 @@
     <div class="openingRecord">
         <!-- 审核列表 -->
         <ul>
-            <li v-for="item in manageList"  :key=item.id @click="showPopup(item.status)">
+            <li v-for="item in manageList"  :key=item.id >
                 <div class="content">
                     <!-- 用户信息 -->
                     <div class="user">
