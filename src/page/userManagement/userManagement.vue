@@ -6,7 +6,7 @@
                 <img src="@/assets/image/user_addUser.png" alt="">
                 <p>添加用户</p>
             </div>
-            <img class="add" src="@/assets/image/user_add.png" alt="">
+            <img class="add" @click="addUser" src="@/assets/image/user_add.png" alt="">
         </div>
         <!-- 用户列表 -->
         <ul class="userList">
@@ -63,8 +63,12 @@ export default {
             
     }),
     methods:{
-        goUserDetail(){
+        goUserDetail() {
             this.$router.push('/userDetail')
+        },
+        // 添加用户
+        addUser(){
+            this.$router.push('/addUser')
         }
     }
 }
