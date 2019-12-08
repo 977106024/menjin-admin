@@ -12,7 +12,7 @@
                 </div>
 <!--                编辑删除按钮-->
                 <div class="btn">
-                    <img src="@/assets/image/edit2.png" alt="">
+                    <img src="@/assets/image/edit2.png" alt="" @click="edit">
                     <img src="@/assets/image/delete.png" @click="deleteItem" alt="">
                 </div>
             </li>
