@@ -31,21 +31,26 @@
                 <div class="content">
                     <label> 
                         <h4>审核？？：</h4>
-                        <input type="text">
-                        <!-- 详细信息 -->
-                        <div class="detail">
-                            <p>详细信息</p>
-                            <img src="@/assets/image/key_right.png" alt="">
+                        <div class="right">
+                                <input type="text">
+                                <!-- 详细信息 -->
+                                <div class="detail">
+                                    <p>详细信息</p>
+                                    <img src="@/assets/image/key_right.png" alt="">
+                                </div>
                         </div>
+                      
                     </label>
                     <label> 
-                        <h4>审核人员：</h4>
-                        <input type="text">
+                            <h4>审核人员：</h4>
+                            <div class="right">
+                                <input type="text">
+                            </div>
                     </label>
                     <label> 
                         <h4>审核描述：</h4>
                         <div class="describe">
-                            <textarea v-model="desc" cols="10" rows="8" placeholder="请输入不少于10个字的描述" @input="controlNumber" ref="count">
+                            <textarea v-model="desc" cols="10" rows="5" placeholder="请输入不少于10个字的描述" @input="controlNumber" ref="count">
                             </textarea>
                             <span>{{number}}/240</span>
                         </div>
@@ -251,29 +256,34 @@ export default {
         margin-bottom: 0.7rem;
         justify-content:space-between;
     }
+    .diaolog .content label:first-child input{
+        width: 60%;
+    }
+    .diaolog .content .right{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        border-bottom: 1px solid #EEEEEE;
+        margin-left: 0.3rem;
+    }
     .diaolog .content label h4{
         color: #3B4859;
         font-size: 0.3rem;
         font-weight: normal;
     }
     .diaolog .content label input{
-        flex: 1;
         border:0;
-        border-bottom: 1px solid #EEEEEE;
-        margin-left: 0.3rem;
     }
     /* 详细信息 */
     .diaolog .content label .detail{
-        position: absolute;
-        z-index: 9;
-        bottom: 2px;
-        right: 0;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
     }
     .diaolog .content label .detail p{
+        width: 100%;
         font-size: 0.28rem;
         color: #778392;
         margin-right: 0.14rem;
@@ -292,12 +302,12 @@ export default {
         width: 100%;
         margin-top: 0.48rem;
         position: relative;
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
     }
     .diaolog .content label textarea{
         width: 100%;
         border: 0;
-        border-top: 1px solid #dddddd;
-        border-bottom: 1px solid #dddddd;
         padding: 0.32rem .13rem .14rem .36rem;
         font-size: 0.28rem;
         color:#3B4859;
