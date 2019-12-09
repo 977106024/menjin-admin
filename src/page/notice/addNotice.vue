@@ -6,7 +6,7 @@
                 <span>标题</span>
                 <input type="text" maxlength="12">
             </header>
-            <textarea v-model="desc" name="" id="" cols="30" rows="10" placeholder="请输入公告内容" maxlength="240" @input="controlNumber"></textarea>
+            <textarea v-model="desc" name="" id="" cols="30" rows="10" placeholder="请输入公告内容" maxlength="240" @input="controlNumber" @blur="inputOk"></textarea>
             <span class="inputNumber">{{inputNumber}}/240</span>
         </section>
 <!--        区域 状态-->
@@ -35,8 +35,10 @@
 </template>
 
 <script>
+    import {mixinInput} from '@/assets/js/mixin';
     export default {
         name: "addNotice",
+        mixins:[mixinInput],
         data:()=>({
             // 是否显示按钮
             checked:false,
@@ -51,8 +53,8 @@
         }),
         methods: {
             //区域选择结果
-            onConfirm() {
-                // Toast(`当前值：${value}, 当前索引：${index}`);
+            onConfirm(value,index) {
+                window.console.log(`当前值：${value}, 当前索引：${index}`);
                 this.showPicker = false
             },
             // 控制数量

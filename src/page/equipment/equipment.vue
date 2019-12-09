@@ -140,10 +140,10 @@
         width: .3rem;
         height: .3rem;
         position: fixed;
-        bottom: 5.3rem;
+        bottom: 4.3rem;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 2222;
+        z-index: 666666;
     }
 
 </style>

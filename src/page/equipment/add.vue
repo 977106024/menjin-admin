@@ -14,11 +14,11 @@
         <section class="nameAndNumber">
             <div class="name">
                 <p class="title">设备名称</p>
-                <input type="text" placeholder="填写设备名称">
+                <input type="text" placeholder="填写设备名称" @blur="inputOk">
             </div>
             <div class="number">
                 <p class="title">设备编号</p>
-                <input type="text" placeholder="填写设备编号">
+                <input type="text" placeholder="填写设备编号" @blur="inputOk">
             </div>
         </section>
 
@@ -39,8 +39,10 @@
 </template>
 
 <script>
+    import {mixinInput} from '@/assets/js/mixin';
     export default {
         name: "add.vue",
+        mixins:[mixinInput],
         data:()=>({
             showPicker:false,
             columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']

@@ -31,7 +31,7 @@
                 <div class="content">
                     <label> 
                         <h4>审核？？：</h4>
-                        <input type="text">
+                        <input type="text" @blur="inputOk">
                         <!-- 详细信息 -->
                         <div class="detail">
                             <p>详细信息</p>
@@ -40,12 +40,12 @@
                     </label>
                     <label> 
                         <h4>审核人员：</h4>
-                        <input type="text">
+                        <input type="text" @blur="inputOk">
                     </label>
                     <label> 
                         <h4>审核描述：</h4>
                         <div class="describe">
-                            <textarea v-model="desc" cols="10" rows="8" placeholder="请输入不少于10个字的描述" @input="controlNumber" ref="count">
+                            <textarea v-model="desc" cols="10" rows="8" placeholder="请输入不少于10个字的描述" @input="controlNumber" ref="count" @blur="inputOk">
                             </textarea>
                             <span>{{number}}/240</span>
                         </div>
@@ -66,8 +66,10 @@
     </div>
 </template>
 <script>
-export default {
+    import {mixinInput} from '@/assets/js/mixin';
+    export default {
     name:'keyManagement',
+        mixins:[mixinInput],
     data: () => ({
             // 弹窗显示
             noExamine:false, 

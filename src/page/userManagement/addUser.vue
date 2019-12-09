@@ -11,15 +11,15 @@
             </li>
             <li>
                 <p>姓名</p>
-                <input type="text" placeholder="请输入你的姓名">
+                <input type="text" placeholder="请输入你的姓名" @blur="inputOk">
             </li>
             <li>
                 <p>电话</p>
-                <input type="number" placeholder="请输入你的电话">
+                <input type="number" placeholder="请输入你的电话" @blur="inputOk">
             </li>
             <li>
                 <p>卡号</p>
-                <input type="number" placeholder="请输入你的卡号">
+                <input type="number" placeholder="请输入你的卡号" @blur="inputOk">
             </li>
         </ul>
         <!-- 添加图片 -->
@@ -55,8 +55,10 @@
     </div>
 </template>
 <script>
+    import {mixinInput} from '@/assets/js/mixin';
 export default {
     name:'addUser',
+    mixins:[mixinInput],
      data: () => ({
         //  设备
          equipments:['设备1','设备2','设备3'],
