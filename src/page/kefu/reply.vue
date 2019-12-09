@@ -124,6 +124,9 @@
     }
 
     /*输入框*/
+    section.text .content{
+        padding-bottom: .3rem;
+    }
     section.text .content textarea{
         width: 100%;
         border: 0;
@@ -140,7 +143,7 @@
     footer button{
         color: #fff;
         padding:.14rem 1.04rem;
-        margin-top: .5rem;
+        margin-top: .3rem;
         border-radius: .35rem;
         background: #1082FF;
     }
