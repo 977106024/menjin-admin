@@ -36,7 +36,7 @@
 
                 <!--                内容-->
                 <section class="content">
-                    <textarea name="" id="" cols="30" rows="5" placeholder="请输入回复内容"></textarea>
+                    <textarea name="" id="" cols="30" rows="5" placeholder="请输入回复内容" @blur="inputOk"></textarea>
                 </section>
             </section>
 
@@ -49,8 +49,10 @@
 </template>
 
 <script>
+    import {mixinInput} from '@/assets/js/mixin';
     export default {
         name: "kefu-reply",
+        mixins:[mixinInput],
         data:()=>({
             listData: {
                     id:'1',
@@ -122,6 +124,9 @@
     }
 
     /*输入框*/
+    section.text .content{
+        padding-bottom: .3rem;
+    }
     section.text .content textarea{
         width: 100%;
         border: 0;
@@ -132,10 +137,13 @@
     }
 
     /*底部按钮*/
+    footer{
+        padding-bottom: .4rem;
+    }
     footer button{
         color: #fff;
         padding:.14rem 1.04rem;
-        margin-top: .5rem;
+        margin-top: .3rem;
         border-radius: .35rem;
         background: #1082FF;
     }
