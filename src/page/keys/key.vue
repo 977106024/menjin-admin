@@ -45,7 +45,7 @@
                     <label> 
                         <h4>审核描述：</h4>
                         <div class="describe">
-                            <textarea v-model="desc" cols="30" rows="8" placeholder="请输入不少于10个字的描述" @input="controlNumber" ref="count">
+                            <textarea v-model="desc" cols="10" rows="8" placeholder="请输入不少于10个字的描述" @input="controlNumber" ref="count">
                             </textarea>
                             <span>{{number}}/240</span>
                         </div>
@@ -226,7 +226,7 @@ export default {
     }
     .diaolog  .popup img{
         width: 100%;
-        
+        height: 2rem;
     }
     .diaolog .cover{
         position: fixed;
@@ -241,14 +241,14 @@ export default {
     /* 审核内容 */
     .diaolog .content{
         width: 100%;
-        padding: 0.7rem 0.28rem 0.44rem 0.28rem;
+        padding: 0.6rem 0.28rem 0.44rem 0.28rem;
 
     }
     .diaolog .content label{
         display: flex;
         position: relative;
         flex-direction: row;
-        margin-bottom: 0.76rem;
+        margin-bottom: 0.7rem;
         justify-content:space-between;
     }
     .diaolog .content label h4{
@@ -298,7 +298,7 @@ export default {
         border: 0;
         border-top: 1px solid #dddddd;
         border-bottom: 1px solid #dddddd;
-        padding: 0.32rem;
+        padding: 0.32rem .13rem .14rem .36rem;
         font-size: 0.28rem;
         color:#3B4859;
     }
@@ -326,7 +326,7 @@ export default {
         border-radius: .4rem;
         font-size: .3rem;
         line-height: .7rem;
-        margin-bottom: 0.52rem;
+        margin-bottom: 0.4rem;
     }
     /* 弹窗关闭按钮 */
     .diaolog .popup .close{
